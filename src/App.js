@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import CreateTodo from "./CreateTodo";
 import './App.css';
 
 const todos = {
   items: [],
   get(){
-    return items;
+    return this.items;
   },
   add(obj){
     this.items.push(obj);
@@ -31,6 +32,9 @@ class App extends Component {
         />
       </div>
     );
+  }
+  createTask(){
+
   }
 }
 
