@@ -3,9 +3,9 @@ import React from "react";
 class CreateTodo extends React.Component {
     render () {
         return (
-            <form onSubmit={this.onSubmit.bind(this)}>
+            <form style={{textAlign:"center"}} onSubmit={this.onSubmit.bind(this)}>
                 <input type="text" placeholder="Task" ref="task" autoFocus/>
-                <button>Add</button>
+                <button style={{width:"90%", display:"inline"}} className="btn btn-primary  btn-block">Add</button>
             </form>
         );
     }

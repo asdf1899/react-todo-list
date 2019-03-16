@@ -8,11 +8,11 @@ class ShowTodo extends React.Component {
         // BUG QUANDO SI CERCA DI CANCELLARE LA LISTA IN ORDINE, NON FUNZIONA
         return (
             <div>
-                <ul>
+                <ul className="table-view">
                     {tasks.todos.map(item => (
-                        <li key={item.id}>
+                        <li className="table-view-cell" key={item.id}>
                         {item.taskValue}
-                        <button value={item.id} onClick={ remove => (this.props.removeTask(item.id))}>Elimina</button>
+                        <button className="btn btn-negative" value={item.id} onClick={ remove => (this.props.removeTask(item.id))}>Elimina</button>
                     </li>
                     ))}
                 </ul>

@@ -3,13 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
+    <meta name="theme-color" content="#E6E6E6" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link href="css/ratchet.min.css" rel="stylesheet">
+    <link href="css/ratchet-theme-ios.min.css" rel="stylesheet">
+    <script src="js/ratchet.min.js"></script>
     <title>React todo App</title>
   </head>
   <body>
-    <div id="root"></div>
+    <header class="bar bar-nav">
+      <a class="icon icon-left-nav pull-left" href=""></a>
+      <h1 class="title">Todo List</h1>
+    </header>
+    <nav class="bar bar-tab">
+      <a class="tab-item active" href="https://asdf1899.github.io">
+        Portfolio
+      </a>
+      <a class="tab-item" href="https://github.com/asdf1899">
+        Github
+      </a>
+      <a class="tab-item" href="https://github.com/asdf1899/react-todo-list">
+        Project
+      </a>
+    </nav>
+    <div class="content">
+        <p class="content-padded" style="text-align:center">PWA Todo List test using ReactJS and Ratchet</p>
+         <div id="root"></div> 
+
+        </div>
+      </div>
   </body>
 </html>
