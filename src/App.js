@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CreateTodo from "./CreateTodo";
-import ShowTodo from "./ShowTodo";
+import CreateTodo from "./classes/CreateTodo";
+import ShowTodo from "./classes/ShowTodo";
 import './App.css';
 
 const todos = {
