@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CreateTodo from "./CreateTodo";
+import ShowTodo from "./ShowTodo";
 import './App.css';
 
 const todos = {
@@ -30,6 +31,7 @@ class App extends Component {
         <CreateTodo
           createTask={this.createTask.bind(this)}
         />
+        <ShowTodo />
       </div>
     );
   }
@@ -37,9 +39,13 @@ class App extends Component {
     if (taskValue !== ""){
       var id = this.state.todos.length;
       todos.add({id, taskValue});
-      this.setState({ todos: this.state.todos });
+      this.setState({ todos: todos.get() });
       console.log(this.state);
     }
+  }
+  removeTask(id){
+    todos.remove(id);
+    this.setState({ todos: todos.get() });
   }
 }
 
