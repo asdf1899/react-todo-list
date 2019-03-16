@@ -33,8 +33,13 @@ class App extends Component {
       </div>
     );
   }
-  createTask(){
-
+  createTask(taskValue){
+    if (taskValue !== ""){
+      var id = this.state.todos.length;
+      todos.add({id, taskValue});
+      this.setState({ todos: this.state.todos });
+      console.log(this.state);
+    }
   }
 }
 
