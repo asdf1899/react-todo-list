@@ -13,7 +13,6 @@ const todos = {
   },
   remove (id) {
     this.items.splice(id, 1);
-    this.save();
   }
 };
 
@@ -27,11 +26,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>Simple reactJS todo list</h1>
+        <h1>Simple ReactJS todo list</h1>
         <CreateTodo
           createTask={this.createTask.bind(this)}
         />
-        <ShowTodo />
+        <ShowTodo showTask={this.state} removeTask={this.removeTask.bind(this)}/>
       </div>
     );
   }
@@ -40,12 +39,13 @@ class App extends Component {
       var id = this.state.todos.length;
       todos.add({id, taskValue});
       this.setState({ todos: todos.get() });
-      console.log(this.state);
+      //console.log(this.state);
     }
   }
   removeTask(id){
     todos.remove(id);
     this.setState({ todos: todos.get() });
+    //console.log(this.state);
   }
 }
 

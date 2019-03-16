@@ -2,14 +2,16 @@ import React from "react";
 
 class ShowTodo extends React.Component {
     render() {
+        var tasks = this.props.showTask;
+        console.log(tasks);
         return (
             <div>
                 <ul>
-                    {this.state.items.map(item => (
+                    {tasks.todos.map(item => (
                         <li key={item.id}>
-                        {item.product} {item.num}
-                        <button onClick={this.removeItem(item.id)}>Elimina</button>
-                        </li>
+                        {item.taskValue}
+                        <button onClick={ asdf => (this.props.removeTask(item.id))}>Elimina</button>
+                    </li>
                     ))}
                 </ul>
             </div>
