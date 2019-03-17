@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/asdf1899.github.io/react-todo-list/static/css/main.34d8cbfa.chunk.css"
   },
   {
-    "revision": "2199aead38aba0e588d01415f64f1495",
+    "revision": "72cd78620d4fd10235f09d551952860f",
     "url": "/asdf1899.github.io/react-todo-list/index.html"
   }
 ];
