@@ -12,7 +12,7 @@ class ShowTodo extends React.Component {
                     {tasks.todos.map(item => (
                         <li className="table-view-cell" key={item.id}>
                         {item.taskValue}
-                        <button className="btn btn-negative" value={item.id} onClick={ remove => (this.props.removeTask(item.id))}>Elimina</button>
+                        <button className="btn btn-negative" value={item.id} onClick={ remove => (this.props.removeTask(item.id))}>Remove</button>
                     </li>
                     ))}
                 </ul>
