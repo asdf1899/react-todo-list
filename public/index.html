@@ -34,8 +34,18 @@
         <p class="content-padded" style="text-align:center">PWA Todo List test using ReactJS and Ratchet</p>
         <p class="content-padded" style="text-align:center">Optimized for mobile phones</p>
          <div id="root"></div> 
-
-        </div>
+        
       </div>
   </body>
+  <script>
+    if ('serviceWorker' in navigator) {
+       console.log("Service worker register");
+       navigator.serviceWorker.register('service-worker.js')
+         .then(function(reg){
+           console.log("Complete.");
+        }).catch(function(err) {
+           console.log("Error: ", err)
+       });
+    }
+   </script>
 </html>
