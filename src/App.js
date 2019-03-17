@@ -12,7 +12,14 @@ const todos = {
     this.items.push(obj);
   },
   remove (id) {
-    this.items.splice(id, 1);
+    // cerca l'id del task tra l'array di array this.items
+    for (var i=0; i < this.items.length;i++){
+      // se lo trova, lo cancella
+      if (this.items[i].id === id){
+        this.items.splice(i, 1);
+        return;
+      }
+    }
   }
 };
 
@@ -27,6 +34,7 @@ class App extends Component {
     return (
       <div>
         <CreateTodo
+          // binding tra createTask e la funzione this.createTask
           createTask={this.createTask.bind(this)}
         />
         <ShowTodo showTask={this.state} removeTask={this.removeTask.bind(this)}/>
@@ -35,7 +43,7 @@ class App extends Component {
   }
   createTask(taskValue){
     if (taskValue !== ""){
-      var id = this.state.todos.length;
+      var id = this.state.todos.length + 1;
       todos.add({id, taskValue});
       this.setState({ todos: todos.get() });
       //console.log(this.state);

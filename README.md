@@ -2,7 +2,8 @@
 
 PWA Todo List test using ReactJS and Ratchet
 
-### Bugs
+### Todo
 
-Delete tasks.
+Remove bugs
+
 
