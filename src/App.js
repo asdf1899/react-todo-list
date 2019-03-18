@@ -25,10 +25,17 @@ const todos = {
 
 class App extends Component {
   constructor (props) {
-      super(props);
-      this.state = {
-          todos: todos.items
-      };
+    super(props);
+    // se il browser è compatibile con localstorage
+    if (typeof(Storage) !== "undefined") {
+      var localTodo = localStorage.getItem('1');
+      if (localTodo !== null){
+        todos.items = JSON.parse(localTodo);
+      }
+    }
+    this.state = {
+      todos: todos.items
+    };
   }
   render() {
     return (
@@ -46,12 +53,19 @@ class App extends Component {
       var id = this.state.todos.length + 1;
       todos.add({id, taskValue});
       this.setState({ todos: todos.get() });
+      // se il browser è compatibile con il localstorage
+      if (typeof(Storage) !== "undefined") {
+        localStorage.setItem('1', JSON.stringify(this.state.todos));
+      }
       //console.log(this.state);
     }
   }
   removeTask(id){
     todos.remove(id);
     this.setState({ todos: todos.get() });
+    if (typeof(Storage) !== "undefined") {
+      localStorage.setItem('1', JSON.stringify(this.state.todos));
+    }
     //console.log(this.state);
   }
 }

@@ -3,9 +3,7 @@ import React from "react";
 class ShowTodo extends React.Component {
     render() {
         var tasks = this.props.showTask;
-        console.log(tasks.todos);
-        // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        // BUG QUANDO SI CERCA DI CANCELLARE LA LISTA IN ORDINE, NON FUNZIONA
+        //console.log(tasks.todos);
         return (
             <div>
                 <ul className="table-view">
