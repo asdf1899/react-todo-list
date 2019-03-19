@@ -48,8 +48,10 @@ class App extends Component {
         <CreateTodo
           // binding tra createTask e la funzione this.createTask
           createTask={this.createTask.bind(this)}
+          // binding tra removeAll e la funzione this.removeAll
+          removeAll={this.removeAll.bind(this)}
         />
-        <ShowTodo showTask={this.state} removeTask={this.removeTask.bind(this)} listHeight={this.listHeight} removeAll={this.removeAll.bind(this)}/>
+        <ShowTodo showTask={this.state} removeTask={this.removeTask.bind(this)} listHeight={this.listHeight}/>
       </div>
     );
   }
