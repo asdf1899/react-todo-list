@@ -5,7 +5,7 @@ class CreateTodo extends React.Component {
         return (
             <form style={{textAlign:"center"}} onSubmit={this.onSubmit.bind(this)}>
                 <input type="text" placeholder="Task" ref="task" autoFocus/>
-                <button style={{width:"90%", display:"inline"}} className="btn btn-primary  btn-block">Add</button>
+                <button style={{width:"90%", display:"inline", outline:"none"}} className="btn btn-primary btn-block">Add</button>
             </form>
         );
     }

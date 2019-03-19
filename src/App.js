@@ -20,12 +20,17 @@ const todos = {
         return;
       }
     }
+  },
+  removeAll(){
+    this.items = []
+    return;
   }
 };
 
 class App extends Component {
   constructor (props) {
     super(props);
+    this.listHeight = window.outerHeight - 300;
     // se il browser è compatibile con localstorage
     if (typeof(Storage) !== "undefined") {
       var localTodo = localStorage.getItem('1');
@@ -44,7 +49,7 @@ class App extends Component {
           // binding tra createTask e la funzione this.createTask
           createTask={this.createTask.bind(this)}
         />
-        <ShowTodo showTask={this.state} removeTask={this.removeTask.bind(this)}/>
+        <ShowTodo showTask={this.state} removeTask={this.removeTask.bind(this)} listHeight={this.listHeight} removeAll={this.removeAll.bind(this)}/>
       </div>
     );
   }
@@ -67,6 +72,13 @@ class App extends Component {
       localStorage.setItem('1', JSON.stringify(this.state.todos));
     }
     //console.log(this.state);
+  }
+  removeAll(){
+    todos.removeAll();
+    this.setState({ todos: todos.get() });
+    if (typeof(Storage) !== "undefined") {
+      localStorage.clear();
+    }
   }
 }
 
