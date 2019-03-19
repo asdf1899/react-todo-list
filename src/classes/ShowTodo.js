@@ -9,9 +9,9 @@ class ShowTodo extends React.Component {
                 <ul className="table-view">
                     {tasks.todos.map(item => (
                         <li className="table-view-cell" key={item.id}>
-                        {item.taskValue}
-                        <button className="btn btn-negative" value={item.id} onClick={ remove => (this.props.removeTask(item.id))}>Remove</button>
-                    </li>
+                            <p style={{width:"90%", overflow:"auto", maxheight:"300px", lineheight:"100px", overflowwrap: "break-word"}}>{item.taskValue}</p>
+                            <button className="btn btn-negative" value={item.id} onClick={ remove => (this.props.removeTask(item.id))}>Remove</button>
+                        </li>
                     ))}
                 </ul>
             </div>
